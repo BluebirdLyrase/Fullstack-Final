@@ -55,6 +55,6 @@ $(function () {
             alert("Data: " + newproduct + "\nStatus: " + status);
           });
         // ===============================
-
+        getData();
     });
 })

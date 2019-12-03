@@ -73,7 +73,7 @@ $(function () {
                 // $('#alertModal').modal('toggle');
                 // Refresh data
                 // getData();
-                // winidow.location.href = "product.html";
+                window.location.href = "product.html";
             }
         });
         // ===============================
