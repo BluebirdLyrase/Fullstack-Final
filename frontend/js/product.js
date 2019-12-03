@@ -30,7 +30,9 @@ $(function () {
 
         // #13 Add new products by calling api
         // use $.post
-
+        $.post(url, function(newproduct, status){
+            alert("Data: " + newproduct + "\nStatus: " + status);
+          });
         // ===============================
 
     });
