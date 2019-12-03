@@ -33,31 +33,35 @@ router.get('/products', products.getAllProducts);
 router.get('/products/:pid', products.getProductById);
 
 // #4 Complete the routing for POST, PUT, DELETE
-router.post('/products/', function (req, res) {
-    var newproduct = req.body;
-    var product = new productObject(newproduct);
-    product.save(function (err) {
-        if (err) res.status(500).json(err);
-        res.json({ status: "Added a product" });
-    });
-});
+router.put('/products:pid', products.updateProductById);
+router.post('/products',products.addProduct);
+router.delete('/products:pid', products.deleteProductById);
 
-router.put('/products/:pid', function (req, res) {
-    var id = req.params.pid;
-    var updateProduct = req.body;
-    productObject.findByIdAndUpdate(id,updateProduct,function (err) {
-        if (err) res.status(500).json(err);
-        res.json({status : "update product"});
-    });
-});
+// router.post('/products/', function (req, res) {
+//     var newproduct = req.body;
+//     var product = new productObject(newproduct);
+//     product.save(function (err) {
+//         if (err) res.status(500).json(err);
+//         res.json({ status: "Added a product" });
+//     });
+// });
 
-router.delete('/products/:pid', function (req, res) {
-    var id = req.params.pid;
-    productObject.findByIdAndRemove(id,function (err) {
-        if (err) res.status(500).json(err);
-        res.json({status : "delete a product"});
-    });
-});
+// router.put('/products/:pid', function (req, res) {
+//     var id = req.params.pid;
+//     var updateProduct = req.body;
+//     productObject.findByIdAndUpdate(id,updateProduct,function (err) {
+//         if (err) res.status(500).json(err);
+//         res.json({status : "update product"});
+//     });
+// });
+
+// router.delete('/products/:pid', function (req, res) {
+//     var id = req.params.pid;
+//     productObject.findByIdAndRemove(id,function (err) {
+//         if (err) res.status(500).json(err);
+//         res.json({status : "delete a product"});
+//     });
+// });
 // ===============================
 
 
