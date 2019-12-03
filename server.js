@@ -66,7 +66,6 @@ router.delete('/products/:pid', function (req, res) {
 app.use('/api', cors(), router);
 
 // #10 Start the server
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/product', { useNewUrlParser: true, useUnifiedTopology: true }); // connect to our database
+app.listen(8080);
 // ===============================
 console.log('Magic happens on http://localhost:' + port);
