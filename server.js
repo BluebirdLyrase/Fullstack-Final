@@ -45,7 +45,6 @@ router.post('/products/', function (req, res) {
 router.put('/products/:pid', function (req, res) {
     var id = req.params.pid;
     var updateProduct = req.body;
-    // productObject.findByIdAndUpdate({"_id":id},updateProduct,function (err) {
     productObject.findByIdAndUpdate(id,updateProduct,function (err) {
         if (err) res.status(500).json(err);
         res.json({status : "update product"});
@@ -67,6 +66,7 @@ router.delete('/products/:pid', function (req, res) {
 app.use('/api', cors(), router);
 
 // #10 Start the server
-
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/product', { useNewUrlParser: true, useUnifiedTopology: true }); // connect to our database
 // ===============================
 console.log('Magic happens on http://localhost:' + port);
