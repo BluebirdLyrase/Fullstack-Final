@@ -19,7 +19,7 @@ $(function () {
                                             <td>${item['name']}</td>
                                             <td>${item['category']}</td>
                                             <td>${item['price']}</td>
-                                            <td><a href="productdetail.html?pid=${item['serialno']}" class="btn btn-primary" style="color:white" role="button">Detail</a></td>
+                                            <td><a href="productdetail.html?pid=${item['_id']}" class="btn btn-primary" style="color:white" role="button">Detail</a></td>
                                             </tr>`);
         
                 });
